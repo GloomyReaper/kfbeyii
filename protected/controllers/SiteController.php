@@ -100,4 +100,33 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	/**
+	 * Тесты разработчика
+	 */
+	public function actionDeveloperTest()
+	{
+		$model=new DeveloperTestForm;
+		if(isset($_POST['DeveloperTestForm']))
+		{
+			$model->attributes=$_POST['DeveloperTestForm'];
+			if($model->validate())
+			{
+				// отобразить тестовое сообщение
+	        	if ($model->actionType=='showFlashMessage') {
+	        		
+		            $flashMessage = "Initial flash message";
+		            
+		            Yii::app()->user->setFlash('developertest', $flashMessage);
+		            $this->refresh();	        		
+	        	}				
+				
+				/* $headers="From: {$model->email}\r\nReply-To: {$model->email}";
+				mail(Yii::app()->params['adminEmail'],$model->subject,$model->body,$headers);
+				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				$this->refresh(); */
+			}
+		}
+		$this->render('developertest',array('model'=>$model));
+	}	
 }

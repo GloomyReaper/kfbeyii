@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Best Place',
+	'name'=>'КФБЭ Yii',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -50,10 +50,13 @@ return array(
 		), */
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=bestplace',
+			// 'connectionString' => 'mysql:host=localhost;dbname=bestplace',
+			'connectionString' => 'mysql:host=localhost;dbname=kfbeuser_jml04',
 			'emulatePrepare' => true,
-			'username' => 'bestplace_admin',
-			'password' => '12345',
+			'username' => 'root',
+			// 'username' => 'bestplace_admin',
+			'password' => 'mike73mysql',
+			// 'password' => '12345',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
